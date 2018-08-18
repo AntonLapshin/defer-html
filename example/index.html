@@ -1,0 +1,19 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Example defer-html</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <p>This content has been loaded after load event</p>
+  <p data-defer-html="content.html"></p>
+  <script src="defer-html/deferHTML.js"></script>
+  <script>
+    window.deferHTML.loadHTML();
+  </script>
+</body>
+
+</html>
