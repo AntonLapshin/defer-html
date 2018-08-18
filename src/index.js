@@ -10,7 +10,7 @@ const attr = "data-defer-html",
     xhr.send();
   };
 
-export const loadHTML = baseHref => {
+export const loadHTML = (baseHref = '') => {
   [].forEach.call(document.querySelectorAll(`div[${attr}]`), e =>
     load(baseHref + e.getAttribute(attr), html => {
       e.outerHTML = html;
