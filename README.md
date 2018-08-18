@@ -12,9 +12,9 @@ npm i defer-html
 
 ## Usage
 
-1. Extract a bunch of html you are going to defer into a file `hidden-posts.html` and place it in the same folder as `index.html`
+### Extract a bunch of html you are going to defer into a file `hidden-posts.html` and place it in the same folder as `index.html`
 
-hidden-posts.html
+`hidden-posts.html`
 
 ```html
 <div class="post hide">
@@ -28,15 +28,15 @@ hidden-posts.html
 </div>
 ```
 
-2. Add a placeholder in `index.html` file
+### Add a placeholder in `index.html` file
 
 ```html
 <p data-defer-html="hidden-posts.html"></p>
 ```
 
-It could be `p`, `div` or any other DOM element, doesn't matter. Only data-attr makes sense over here.
+It could be `p`, `div` or any other DOM element, doesn't matter. Only data-defer-html makes sense over there.
 
-3. Include `deferHTML.js` and call `loadHTML` method:
+### Include `deferHTML.js` and call `loadHTML` method:
 
 - via ES6 module
 
