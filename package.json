@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/rollup -c rollup.config.js",
-    "serve": "./node_modules/.bin/http-serve example"
+    "serve": "./node_modules/.bin/http-serve example",
+    "deploy": "./node_modules/.bin/gh-pages -d example"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "homepage": "https://github.com/AntonLapshin/defer-html#readme",
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "http-serve": "^1.0.1",
     "rollup": "^0.64.1"
   }
