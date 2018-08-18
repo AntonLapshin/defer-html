@@ -4,7 +4,7 @@
   (factory((global.deferHTML = {})));
 }(this, (function (exports) { 'use strict';
 
-  const load = (url, cb) => {
+  const request = (url, cb) => {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", url, !0);
     xhr.onreadystatechange = () =>
@@ -12,14 +12,20 @@
     xhr.send();
   };
 
-  const loadHTML = (opts = { baseHref: "", attr: "data-defer-html" }) => {
-    const items = document.querySelectorAll(`[${opts.attr}]`);
-    console.log(items);
+  const scan = opts =>
     [].forEach.call(document.querySelectorAll(`[${opts.attr}]`), e =>
-      load(opts.baseHref + e.getAttribute(opts.attr), html => {
+      request(opts.baseHref + e.getAttribute(opts.attr), html => {
         e.outerHTML = html;
       })
     );
+
+  const defaults = { baseHref: "", attr: "data-defer-html" };
+
+  const loadHTML = (opts = {}) => {
+    opts = { ...defaults, opts };
+    !document.body
+      ? window.addEventListener("load", () => scan(opts))
+      : scan(opts);
   };
 
   exports.loadHTML = loadHTML;

@@ -13,7 +13,11 @@ const scan = opts =>
     })
   );
 
-export const loadHTML = (opts = { baseHref: "", attr: "data-defer-html" }) =>
+const defaults = { baseHref: "", attr: "data-defer-html" };
+
+export const loadHTML = (opts = {}) => {
+  opts = { ...defaults, opts };
   !document.body
     ? window.addEventListener("load", () => scan(opts))
     : scan(opts);
+};
