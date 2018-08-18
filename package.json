@@ -1,0 +1,29 @@
+{
+  "name": "defer-html",
+  "version": "1.0.0",
+  "description": "Defer HTML loading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonLapshin/defer-html.git"
+  },
+  "keywords": [
+    "defer",
+    "html",
+    "lazy",
+    "loading",
+    "async",
+    "performance",
+    "score",
+    "optimization"
+  ],
+  "author": "AntonLapshin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AntonLapshin/defer-html/issues"
+  },
+  "homepage": "https://github.com/AntonLapshin/defer-html#readme"
+}
