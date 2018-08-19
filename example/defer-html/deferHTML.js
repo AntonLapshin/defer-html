@@ -22,7 +22,7 @@
   const defaults = { baseHref: "", attr: "data-defer-html" };
 
   const loadHTML = (opts = {}) => {
-    opts = { ...defaults, opts };
+    opts = { ...defaults, ...opts };
     !document.body
       ? window.addEventListener("load", () => scan(opts))
       : scan(opts);
