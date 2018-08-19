@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global.deferHTML = {})));
+  (factory((global.deferHtml = {})));
 }(this, (function (exports) { 'use strict';
 
   const request = (url, cb) => {
@@ -21,14 +21,14 @@
 
   const defaults = { baseHref: "", attr: "data-defer-html" };
 
-  const loadHTML = (opts = {}) => {
+  const loadHtml = (opts = {}) => {
     opts = { ...defaults, ...opts };
     !document.body
       ? window.addEventListener("load", () => scan(opts))
       : scan(opts);
   };
 
-  exports.loadHTML = loadHTML;
+  exports.loadHtml = loadHtml;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -36,33 +36,35 @@ npm i defer-html
 
 It could be `p`, `div` or any other DOM element, doesn't matter. Only data-defer-html makes sense over there.
 
-### Include `deferHTML.js` and call `loadHTML` method:
+### Include `deferHtml.js` and call `loadHtml` method:
 
 - via ES6 module
 
 ```js
-import { loadHTML } from 'defer-html';
+import { loadHtml } from 'defer-html';
 
-loadHTML();
+loadHtml();
 ```
 
 - via script tag
 ```html
-<script src="defer-html/deferHTML.js"></script>
+<script src="defer-html/deferHtml.js"></script>
 <script>
-  window.deferHTML.loadHTML();
+  window.deferHtml.loadHtml();
 </script>
 ```
 
 ## Options
 
-`loadHTML` takes an object which may contain the following parameters:
+`loadHtml` takes an object which may contain the following parameters:
 
 ```js
-loadHTML({
+loadHtml({
   baseHref: 'content/',  // '' by default,
   attr: 'my-custom-attr' // 'data-defer-html' by default
 })
 ```
 
 Another approach from WebComponents API: [link rel="import"](https://www.html5rocks.com/en/tutorials/webcomponents/imports/)
+
+Check out a gulp plugin to inject lazy html loading into your build system [gulp-defer-html](https://www.npmjs.com/package/gulp-defer-html)

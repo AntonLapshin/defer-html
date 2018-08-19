@@ -1,8 +1,8 @@
 {
   "name": "defer-html",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Defer HTML loading",
-  "main": "bin/deferHTML.js",
+  "main": "bin/deferHtml.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/rollup -c rollup.config.js",
