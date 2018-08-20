@@ -6,12 +6,28 @@ const request = (url, cb) => {
   xhr.send();
 };
 
+const eventName = "defer-html:loaded";
+
+const fire = name => {
+  let event;
+  if (window.CustomEvent) {
+    event = new CustomEvent(eventName, { detail: { name } });
+  } else {
+    event = document.createEvent("CustomEvent");
+    event.initCustomEvent(eventName, true, true, { name });
+  }
+
+  el.dispatchEvent(event);
+};
+
 const scan = opts =>
-  [].forEach.call(document.querySelectorAll(`[${opts.attr}]`), e =>
-    request(opts.baseHref + e.getAttribute(opts.attr), html => {
+  [].forEach.call(document.querySelectorAll(`[${opts.attr}]`), e => {
+    const filename = e.getAttribute(opts.attr);
+    request(opts.baseHref + filename, html => {
       e.outerHTML = html;
-    })
-  );
+      fire(filename);
+    });
+  });
 
 const defaults = { baseHref: "", attr: "data-defer-html" };
 
