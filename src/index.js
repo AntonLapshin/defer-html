@@ -17,7 +17,7 @@ const fire = name => {
     event.initCustomEvent(eventName, true, true, { name });
   }
 
-  el.dispatchEvent(event);
+  document.dispatchEvent(event);
 };
 
 const scan = opts =>
