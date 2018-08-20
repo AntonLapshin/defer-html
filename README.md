@@ -65,6 +65,16 @@ loadHtml({
 })
 ```
 
+## Document `event`
+
+Whenever an html file is loaded `defer-html:loaded` event is fired.
+
+```js
+document.addEventListener("defer-html:loaded", ({ detail }) => {
+  console.log(`${detail.name} file has been loaded`);
+});
+```
+
 Another approach from WebComponents API: [link rel="import"](https://www.html5rocks.com/en/tutorials/webcomponents/imports/)
 
 Check out a gulp plugin to inject lazy html loading into your build system [gulp-defer-html](https://www.npmjs.com/package/gulp-defer-html)
