@@ -1,11 +1,13 @@
 {
   "name": "defer-html",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Defer HTML loading",
   "main": "bin/deferHtml.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/rollup -c rollup.config.js",
+    "build-es6": "./node_modules/.bin/rollup -c rollup.config.js",
+    "build-es5": "./node_modules/.bin/rollup -c rollup.config.es5.js",
+    "build": "npm run build-es6 & npm run build-es5",
     "serve": "./node_modules/.bin/http-serve example",
     "deploy": "./node_modules/.bin/gh-pages -d example"
   },
@@ -30,8 +32,11 @@
   },
   "homepage": "https://github.com/AntonLapshin/defer-html#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "gh-pages": "^1.2.0",
     "http-serve": "^1.0.1",
-    "rollup": "^0.64.1"
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^4.0.2"
   }
 }

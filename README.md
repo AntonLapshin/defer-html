@@ -75,6 +75,10 @@ document.addEventListener("defer-html:loaded", ({ detail }) => {
 });
 ```
 
+## ES5 implementation
+
+`./bin/deferHtml.es5.js`
+
 Another approach from WebComponents API: [link rel="import"](https://www.html5rocks.com/en/tutorials/webcomponents/imports/)
 
 Check out a gulp plugin to inject lazy html loading into your build system [gulp-defer-html](https://www.npmjs.com/package/gulp-defer-html)
