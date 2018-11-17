@@ -1,6 +1,6 @@
 {
   "name": "defer-html",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Defer HTML loading",
   "main": "bin/deferHtml.js",
   "scripts": {

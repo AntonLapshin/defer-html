@@ -16,12 +16,8 @@
 
   const fire = name => {
     let event;
-    if (window.CustomEvent) {
-      event = new CustomEvent(eventName, { detail: { name } });
-    } else {
-      event = document.createEvent("CustomEvent");
-      event.initCustomEvent(eventName, true, true, { name });
-    }
+    event = document.createEvent("CustomEvent");
+    event.initCustomEvent(eventName, true, true, { name });
 
     document.dispatchEvent(event);
   };

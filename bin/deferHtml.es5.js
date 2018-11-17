@@ -53,20 +53,10 @@
 
   var fire = function fire(name) {
     var event;
-
-    if (window.CustomEvent) {
-      event = new CustomEvent(eventName, {
-        detail: {
-          name: name
-        }
-      });
-    } else {
-      event = document.createEvent("CustomEvent");
-      event.initCustomEvent(eventName, true, true, {
-        name: name
-      });
-    }
-
+    event = document.createEvent("CustomEvent");
+    event.initCustomEvent(eventName, true, true, {
+      name: name
+    });
     document.dispatchEvent(event);
   };
 

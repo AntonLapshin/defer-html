@@ -11,10 +11,10 @@
   <p>This content was loaded dynamically</p>
   <p data-defer-html="content.html"></p>
 
-  <script src="defer-html/deferHtml.js"></script>
+  <script src="defer-html/deferHtml.es5.js"></script>
   <script>
-    document.addEventListener("defer-html:loaded", ({ detail }) => {
-      console.log(`${detail.name} file has been loaded`);
+    document.addEventListener("defer-html:loaded", function(event){
+      console.log(event.detail.name + ' file has been loaded');
     });
     window.deferHtml.loadHtml();
   </script>
